@@ -77,7 +77,7 @@ async def stream_handler(request: web.Request):
 
 class_cache = {}
 
-async def media_streamer(request: web.Request, id: int, secure_hash: str):
+async def media_streamer(request: web.Request, id: int, secure_hash: str, filename: str):
     range_header = request.headers.get("Range", 0)
     
     index = min(work_loads, key=work_loads.get)
